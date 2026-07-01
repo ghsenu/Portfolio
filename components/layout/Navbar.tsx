@@ -40,7 +40,7 @@ export function Navbar() {
           className="font-mono text-lg font-bold text-primary transition-colors hover:text-primary/80"
           aria-label="Scroll to hero section"
         >
-          {"<Princess />"}
+          {"<Gihansa />"}
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -97,7 +97,7 @@ export function Navbar() {
                 className="font-mono text-lg font-bold text-primary"
                 aria-label="Scroll to hero section"
               >
-                {"<Princess />"}
+                {"<Gihansa />"}
               </a>
               <button
                 type="button"

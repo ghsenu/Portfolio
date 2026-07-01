@@ -13,7 +13,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Princess | Software Engineer",
+  title: "Gihansa Senukie | Software Engineer",
   description:
     "Software engineering student building fintech-focused projects - portfolio and case studies.",
 };

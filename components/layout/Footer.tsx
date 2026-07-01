@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-border py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 text-sm text-muted md:flex-row">
         <p className="font-mono">
-          &copy; {year} Princess. Built with Next.js.
+          &copy; {year} Gihansa Senukie. Built with Next.js.
         </p>
 
         <div className="flex items-center gap-4">

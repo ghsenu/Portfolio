@@ -54,7 +54,7 @@ export function Hero() {
 
         <motion.div variants={itemVariants}>
           <h1 className="text-5xl font-bold tracking-normal text-foreground md:text-7xl">
-            Princess
+            Gihansa Senukie
           </h1>
           <p className="mt-3 text-3xl font-semibold text-primary md:text-5xl">
             Software Engineer
