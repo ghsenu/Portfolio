@@ -15,3 +15,13 @@ export interface Project {
   githubUrl?: string;
   featured?: boolean;
 }
+
+export interface Experience {
+  id: string;
+  role: string;
+  organization: string;
+  startDate: string;
+  endDate?: string;
+  description: string;
+  type: "work" | "education" | "certification";
+}
