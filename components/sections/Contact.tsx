@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { InteractiveBackground } from "@/components/ui/InteractiveBackground";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type FormState = {
@@ -57,9 +58,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="relative isolate overflow-hidden py-16 md:py-24">
+      <InteractiveBackground variant="spotlight" />
       <motion.div
-        className="mx-auto max-w-2xl"
+        className="relative z-10 mx-auto max-w-2xl"
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: "easeOut" }}

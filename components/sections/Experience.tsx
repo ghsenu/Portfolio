@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { experience } from "@/data/experience";
 import { Badge } from "@/components/ui/Badge";
+import { InteractiveBackground } from "@/components/ui/InteractiveBackground";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 
@@ -45,8 +46,9 @@ function getTypeLabel(type: "work" | "education" | "certification") {
 
 export function Experience() {
   return (
-    <section id="experience" className="py-16 md:py-24">
-      <div className="mx-auto max-w-4xl">
+    <section id="experience" className="relative isolate overflow-hidden py-16 md:py-24">
+      <InteractiveBackground variant="none" />
+      <div className="relative z-10 mx-auto max-w-4xl">
         <SectionHeading
           eyebrow="04. Experience"
           title="Education & Certifications"

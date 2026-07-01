@@ -5,6 +5,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { InteractiveBackground } from "@/components/ui/InteractiveBackground";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const containerVariants: Variants = {
@@ -68,8 +69,9 @@ function ProjectLinks({
 
 export function Projects() {
   return (
-    <section id="projects" className="py-16 md:py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="projects" className="relative isolate overflow-hidden py-16 md:py-24">
+      <InteractiveBackground variant="dots" />
+      <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="03. Projects"
           title="Things I've Built"

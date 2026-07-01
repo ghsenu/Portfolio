@@ -4,6 +4,7 @@ import { motion, type Variants } from "framer-motion";
 import { skills } from "@/data/skills";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { InteractiveBackground } from "@/components/ui/InteractiveBackground";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 
@@ -49,8 +50,9 @@ const groupedSkills = categoryOrder.map((category) => ({
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16 md:py-24">
-      <div className="mx-auto max-w-5xl">
+    <section id="skills" className="relative isolate overflow-hidden py-16 md:py-24">
+      <InteractiveBackground variant="grid" />
+      <div className="relative z-10 mx-auto max-w-5xl">
         <SectionHeading
           eyebrow="02. Skills"
           title="Tools & Technologies"

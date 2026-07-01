@@ -4,6 +4,7 @@ import { motion, type Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { InteractiveBackground } from "@/components/ui/InteractiveBackground";
 
 const stack = ["TypeScript", "React", "Next.js", "Flutter", "Firebase", "Python"];
 
@@ -36,10 +37,11 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center py-20 md:py-24"
+      className="relative isolate flex min-h-screen items-center overflow-hidden py-20 md:py-24"
     >
+      <InteractiveBackground variant="spotlight" />
       <motion.div
-        className="max-w-4xl"
+        className="relative z-10 max-w-4xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -94,7 +96,7 @@ export function Hero() {
       </motion.div>
 
       <ChevronDown
-        className="absolute bottom-8 left-1/2 h-6 w-6 -translate-x-1/2 animate-bounce text-muted"
+        className="absolute bottom-8 left-1/2 z-10 h-6 w-6 -translate-x-1/2 animate-bounce text-muted"
         aria-hidden="true"
       />
     </section>
