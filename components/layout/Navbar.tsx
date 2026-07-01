@@ -37,7 +37,7 @@ export function Navbar() {
         <a
           href="#hero"
           onClick={(event) => handleLinkClick(event, "#hero")}
-          className="font-mono text-lg font-bold text-primary transition-colors hover:text-primary/80"
+          className="inline-flex min-h-11 items-center rounded-md font-mono text-lg font-bold text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="Scroll to hero section"
         >
           {"<Gihansa />"}
@@ -50,7 +50,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={(event) => handleLinkClick(event, item.href)}
-                className="group relative font-mono text-xs font-medium uppercase tracking-wide text-muted transition-colors hover:text-foreground"
+                className="group relative inline-flex min-h-11 items-center rounded-md font-mono text-xs font-medium uppercase tracking-wide text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 {item.label}
                 <span className="absolute -bottom-2 left-0 h-px w-full origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
@@ -72,7 +72,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-surface text-foreground transition-colors hover:border-primary hover:text-primary md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-surface text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
           aria-expanded={isOpen}
@@ -94,14 +94,14 @@ export function Navbar() {
               <a
                 href="#hero"
                 onClick={(event) => handleLinkClick(event, "#hero")}
-                className="font-mono text-lg font-bold text-primary"
+                className="inline-flex min-h-11 items-center rounded-md font-mono text-lg font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 aria-label="Scroll to hero section"
               >
                 {"<Gihansa />"}
               </a>
               <button
                 type="button"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-surface text-foreground transition-colors hover:border-primary hover:text-primary"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-surface text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close menu"
               >
@@ -115,7 +115,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={(event) => handleLinkClick(event, item.href)}
-                  className="font-mono text-3xl font-semibold uppercase tracking-wide text-foreground transition-colors hover:text-primary"
+                  className="inline-flex min-h-11 items-center rounded-md font-mono text-2xl font-semibold uppercase tracking-wide text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-3xl"
                 >
                   {item.label}
                 </a>

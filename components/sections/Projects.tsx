@@ -45,7 +45,7 @@ function ProjectLinks({
           href={githubUrl}
           target="_blank"
           rel="noreferrer"
-          className="text-muted transition-colors hover:text-primary"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="View project on GitHub"
         >
           <Github className="h-5 w-5" aria-hidden="true" />
@@ -56,7 +56,7 @@ function ProjectLinks({
           href={liveUrl}
           target="_blank"
           rel="noreferrer"
-          className="text-muted transition-colors hover:text-primary"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="View live project"
         >
           <ExternalLink className="h-5 w-5" aria-hidden="true" />
@@ -68,7 +68,7 @@ function ProjectLinks({
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="03. Projects"
@@ -104,7 +104,7 @@ export function Projects() {
                     <Badge className="border-accent/40 bg-accent/10 text-accent">
                       Featured
                     </Badge>
-                    <h3 className="mt-5 text-3xl font-bold text-foreground md:text-4xl">
+                    <h3 className="mt-5 text-2xl font-bold text-foreground md:text-4xl">
                       {featuredProject.title}
                     </h3>
                     <p className="mt-4 text-sm leading-relaxed text-muted md:text-base">

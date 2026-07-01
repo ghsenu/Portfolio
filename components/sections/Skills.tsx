@@ -49,7 +49,7 @@ const groupedSkills = categoryOrder.map((category) => ({
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           eyebrow="02. Skills"

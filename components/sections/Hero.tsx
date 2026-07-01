@@ -36,7 +36,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center py-24"
+      className="relative flex min-h-screen items-center py-20 md:py-24"
     >
       <motion.div
         className="max-w-4xl"
@@ -53,16 +53,16 @@ export function Hero() {
         </motion.p>
 
         <motion.div variants={itemVariants}>
-          <h1 className="text-5xl font-bold tracking-normal text-foreground md:text-7xl">
+          <h1 className="text-4xl font-bold tracking-normal text-foreground sm:text-5xl md:text-7xl">
             Gihansa Senukie
           </h1>
-          <p className="mt-3 text-3xl font-semibold text-primary md:text-5xl">
+          <p className="mt-3 text-2xl font-semibold text-primary sm:text-3xl md:text-5xl">
             Software Engineer
           </p>
         </motion.div>
 
         <motion.p
-          className="mt-6 max-w-2xl text-lg leading-relaxed text-muted"
+          className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
           variants={itemVariants}
         >
           Software engineering undergraduate building practical full-stack

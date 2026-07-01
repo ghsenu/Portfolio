@@ -57,7 +57,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-16 md:py-24">
       <motion.div
         className="mx-auto max-w-2xl"
         initial={{ opacity: 0, y: 28 }}
@@ -89,7 +89,7 @@ export function Contact() {
               value={form.name}
               onChange={(event) => updateField("name", event.target.value)}
               placeholder="Your name"
-              className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted transition-colors focus:border-primary focus:outline-none"
+              className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted transition-colors focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             />
           </div>
 
@@ -108,7 +108,7 @@ export function Contact() {
               value={form.email}
               onChange={(event) => updateField("email", event.target.value)}
               placeholder="you@example.com"
-              className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted transition-colors focus:border-primary focus:outline-none"
+              className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted transition-colors focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             />
           </div>
 
@@ -127,7 +127,7 @@ export function Contact() {
               value={form.message}
               onChange={(event) => updateField("message", event.target.value)}
               placeholder="Tell me what you'd like to build or discuss."
-              className="w-full resize-none rounded-lg border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted transition-colors focus:border-primary focus:outline-none"
+              className="w-full resize-none rounded-lg border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted transition-colors focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             />
           </div>
 

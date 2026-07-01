@@ -14,7 +14,7 @@ export function Footer() {
           {/* TODO: add GitHub URL */}
           <a
             href="#"
-            className="text-muted transition-colors hover:text-primary"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="GitHub"
           >
             <Github className="h-5 w-5" aria-hidden="true" />
@@ -23,7 +23,7 @@ export function Footer() {
           {/* TODO: add LinkedIn URL */}
           <a
             href="#"
-            className="text-muted transition-colors hover:text-primary"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="LinkedIn"
           >
             <Linkedin className="h-5 w-5" aria-hidden="true" />
@@ -32,7 +32,7 @@ export function Footer() {
           {/* TODO: add email address */}
           <a
             href="#"
-            className="text-muted transition-colors hover:text-primary"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="Email"
           >
             <Mail className="h-5 w-5" aria-hidden="true" />
