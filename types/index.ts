@@ -14,6 +14,10 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  longDescription?: string;
+  screenshots?: string[];
+  features?: string[];
+  role?: string;
 }
 
 export interface Experience {

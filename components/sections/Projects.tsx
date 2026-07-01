@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import type { MouseEvent } from "react";
 import { motion, type Variants } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/projects";
@@ -39,13 +41,18 @@ function ProjectLinks({
   githubUrl?: string;
   liveUrl?: string;
 }) {
+  const handleIconClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.stopPropagation();
+  };
+
   return (
-    <div className="flex items-center gap-3">
+    <div className="relative z-20 flex items-center gap-3">
       {githubUrl ? (
         <a
           href={githubUrl}
           target="_blank"
           rel="noreferrer"
+          onClick={handleIconClick}
           className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="View project on GitHub"
         >
@@ -57,6 +64,7 @@ function ProjectLinks({
           href={liveUrl}
           target="_blank"
           rel="noreferrer"
+          onClick={handleIconClick}
           className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="View live project"
         >
@@ -86,8 +94,13 @@ export function Projects() {
         >
           {featuredProject ? (
             <motion.div variants={cardVariants}>
-              <Card className="transition duration-300 hover:-translate-y-1 hover:border-primary/70 hover:shadow-lg hover:shadow-primary/10">
-                <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <Card className="group relative cursor-pointer transition duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-lg hover:shadow-primary/10">
+                <Link
+                  href={`/projects/${featuredProject.id}`}
+                  className="absolute inset-0 z-10 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  aria-label={`View ${featuredProject.title} project details`}
+                />
+                <div className="relative z-0 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                   <div className="aspect-video overflow-hidden rounded-md border border-border bg-surfaceLight">
                     <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center">
                       <p className="font-mono text-xs uppercase tracking-wide text-muted">
@@ -142,8 +155,13 @@ export function Projects() {
           >
             {standardProjects.map((project) => (
               <motion.div key={project.id} variants={cardVariants}>
-                <Card className="flex h-full flex-col transition duration-300 hover:-translate-y-1 hover:border-primary/70 hover:shadow-lg hover:shadow-primary/10">
-                  <div className="flex-1">
+                <Card className="group relative flex h-full cursor-pointer flex-col transition duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-lg hover:shadow-primary/10">
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="absolute inset-0 z-10 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    aria-label={`View ${project.title} project details`}
+                  />
+                  <div className="relative z-0 flex-1">
                     <h3 className="text-xl font-bold text-foreground">
                       {project.title}
                     </h3>
