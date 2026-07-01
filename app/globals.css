@@ -17,6 +17,18 @@ html {
   scroll-padding-top: 80px;
 }
 
+@keyframes cursor-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
 body {
   min-height: 100vh;
   background-color: var(--background);
