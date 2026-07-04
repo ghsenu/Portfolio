@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2, ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/types";
+import { ProjectGallery } from "@/components/ProjectGallery";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 
@@ -19,40 +18,6 @@ function openExternalLink(url?: string) {
   }
 
   window.open(url, "_blank", "noopener,noreferrer");
-}
-
-function Screenshot({
-  projectTitle,
-  src,
-  index,
-}: {
-  projectTitle: string;
-  src: string;
-  index: number;
-}) {
-  const [hasError, setHasError] = useState(false);
-
-  return (
-    <div className="relative aspect-video overflow-hidden rounded-lg border border-border bg-surfaceLight">
-      {hasError ? (
-        <div className="flex h-full flex-col items-center justify-center gap-2 px-4 text-center">
-          <p className="font-mono text-xs uppercase tracking-wide text-muted">
-            Screenshot Placeholder
-          </p>
-          <p className="text-sm text-muted">{src}</p>
-        </div>
-      ) : (
-        <Image
-          src={src}
-          alt={`${projectTitle} screenshot ${index + 1}`}
-          fill
-          className="object-cover"
-          sizes="(min-width: 768px) 50vw, 100vw"
-          onError={() => setHasError(true)}
-        />
-      )}
-    </div>
-  );
 }
 
 export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
@@ -116,16 +81,10 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
             <h2 className="mb-4 text-2xl font-bold text-foreground">
               Screenshots
             </h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {project.screenshots.map((screenshot, index) => (
-                <Screenshot
-                  key={screenshot}
-                  projectTitle={project.title}
-                  src={screenshot}
-                  index={index}
-                />
-              ))}
-            </div>
+            <ProjectGallery
+              screenshots={project.screenshots}
+              projectTitle={project.title}
+            />
           </section>
         ) : null}
 
