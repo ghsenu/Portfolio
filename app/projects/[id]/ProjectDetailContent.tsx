@@ -7,6 +7,7 @@ import type { Project } from "@/types";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 
 type ProjectDetailContentProps = {
   project: Project;
@@ -20,10 +21,33 @@ function openExternalLink(url?: string) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
 
+function getRepositoryLabel(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const pathSegments = parsedUrl.pathname
+      .replace(/\.git$/, "")
+      .split("/")
+      .filter(Boolean);
+
+    if (pathSegments.length >= 2) {
+      return pathSegments.slice(-2).join("/");
+    }
+  } catch {
+    return "View Source Code";
+  }
+
+  return "View Source Code";
+}
+
 export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
   const overview = project.longDescription ?? project.description;
   const paragraphs = overview.split(/\n\s*\n/).filter(Boolean);
   const hasLiveDemo = Boolean(project.liveUrl && project.liveUrl !== "#");
+  const hasRepository = Boolean(project.githubUrl && project.githubUrl !== "#");
+  const repositoryLabel =
+    hasRepository && project.githubUrl
+      ? getRepositoryLabel(project.githubUrl)
+      : "View Source Code";
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-24 text-foreground md:py-28">
@@ -116,6 +140,47 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
               ))}
             </ul>
           </section>
+        ) : null}
+
+        {hasRepository ? (
+          <motion.section
+            className="mt-14"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
+          >
+            <h2 className="mb-4 text-2xl font-bold text-foreground">
+              Repository
+            </h2>
+            <Card>
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div className="flex gap-4">
+                  <Github
+                    className="mt-1 h-8 w-8 flex-none text-foreground"
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <p className="font-mono text-foreground">
+                      {repositoryLabel}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      Explore the full source code, commit history, and
+                      implementation details on GitHub.
+                    </p>
+                  </div>
+                </div>
+
+                <Button
+                  variant="primary"
+                  className="w-full flex-none md:w-auto"
+                  onClick={() => openExternalLink(project.githubUrl)}
+                >
+                  <Github className="h-4 w-4" aria-hidden="true" />
+                  View Repository
+                </Button>
+              </div>
+            </Card>
+          </motion.section>
         ) : null}
       </motion.div>
     </main>
